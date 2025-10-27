@@ -1,0 +1,132 @@
+/* ===============================
+   Research Page Styles (Fixed)
+   =============================== */
+
+.timeline {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.timeline .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.timeline .h3 {
+  color: var(--vegas-gold);
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+/* --- Text blocks --- */
+.timeline-text {
+  line-height: 1.8;
+  font-size: 0.95rem;
+  color: var(--light-gray);
+  margin-bottom: 14px;
+}
+
+/* --- Media layout --- */
+.media-row {
+  display: grid;
+  grid-template-columns: 38% 60%; /* poster smaller, video larger */
+  gap: 2%;
+  align-items: end; /* align bottoms */
+  margin-top: 30px;
+}
+
+/* Poster */
+.poster-box {
+  text-align: center;
+}
+
+.poster-img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--shadow-3);
+  cursor: pointer;
+  height: 420px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  object-fit: contain;
+}
+
+.poster-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
+}
+
+.poster-caption {
+  font-size: 0.8rem;
+  color: var(--light-gray-70);
+  margin-top: 6px;
+}
+
+/* Video */
+.poster-video {
+  width: 100%;
+  height: 420px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-3);
+  border: none;
+  object-fit: cover;
+}
+
+/* Inline link styling */
+.inline-link {
+  color: var(--vegas-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: 0.2s ease;
+}
+
+.inline-link:hover {
+  color: var(--white-2);
+  text-decoration-color: var(--white-2);
+}
+
+/* Responsive stacking for mobile */
+@media (max-width: 950px) {
+  .media-row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .poster-video {
+    height: 360px;
+  }
+}
+
+/* --- Save Tuba gallery layout --- */
+#save-tuba-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+#save-tuba-gallery .poster-box {
+  flex: 1 1 30%;
+  max-width: 280px;
+}
+
+#save-tuba-gallery .poster-img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: var(--shadow-3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#save-tuba-gallery .poster-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 900px) {
+  #save-tuba-gallery .poster-box {
+    flex: 1 1 80%;
+    max-width: none;
+  }
+}

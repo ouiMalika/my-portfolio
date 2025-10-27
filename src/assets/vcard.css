@@ -1,0 +1,324 @@
+:root {
+  --bg-dark: #1d1d1d;
+  --panel-dark: #222;
+  --accent: #f3c623;
+  --text-light: #e8e8e8;
+  --text-gray: #b3b3b3;
+  --radius: 20px;
+  --shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  --font-main: "Poppins", sans-serif;
+  --transition: 0.3s ease;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a { text-decoration: none; color: inherit; }
+li { list-style: none; }
+img { display: block; max-width: 100%; }
+
+/* Base */
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+}
+
+/* Layout */
+.main {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background: var(--panel-dark);
+  border-right: 1px solid #2c2c2c;
+  padding: 40px 25px;
+  box-shadow: var(--shadow);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.avatar-box {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 auto 20px;
+}
+.avatar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.info-content .name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+.info-content .title {
+  display: inline-block;
+  background: #333;
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  border-radius: 10px;
+  margin: 10px auto;
+}
+.info_more-btn {
+  background: none;
+  color: var(--accent);
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+.separator {
+  height: 1px;
+  background: #2c2c2c;
+  margin: 20px 0;
+}
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.icon-box {
+  width: 32px;
+  height: 32px;
+  background: #2c2c2c;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.contact-title {
+  font-size: 0.7rem;
+  color: var(--text-gray);
+}
+.contact-link {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* --- Sidebar Refinements --- */
+.sidebar-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.info-content .title {
+  display: inline-block;
+  margin: 8px auto 0;
+  background: #333;
+  color: var(--text-gray);
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.contact-link em {
+  font-style: italic;
+  color: var(--vegas-gold);
+  font-weight: 500;
+}
+
+/* --- Sidebar subtitle style --- */
+.subtitle {
+  color: var(--vegas-gold);
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 6px;    
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+/* Main content */
+.main-content {
+  margin-left: 300px;
+  width: calc(100% - 300px);
+  padding: 60px;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--panel-dark);
+  border-radius: var(--radius);
+  padding: 20px 40px;
+  margin-bottom: 40px;
+  box-shadow: var(--shadow);
+}
+.navbar-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.navbar-link {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+.navbar-link:hover { color: var(--accent); }
+.router-link-exact-active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Article / sections */
+article {
+  background: var(--panel-dark);
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: var(--shadow);
+}
+.h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+.service-item {
+  background: #2c2c2c;
+  border-radius: 14px;
+  padding: 25px;
+  transition: var(--transition);
+}
+.service-item:hover { transform: translateY(-4px); }
+.service-item-title {
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.service-item-text {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+}
+
+.timeline {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.timeline-item-title {
+  color: var(--vegas-gold);
+  font-weight: 600;
+}
+
+/* === ABOUT PAGE REFINEMENT === */
+
+/* Section spacing */
+.about-text {
+  margin-bottom: 50px;
+  line-height: 1.75;
+  font-size: 1rem;
+  color: var(--light-gray);
+}
+
+/* Title spacing and weight */
+.timeline .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;               /* space between icon and title */
+  margin-bottom: 25px;
+}
+
+.timeline .title-wrapper .icon-box {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--border-gradient-onyx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vegas-gold);
+  box-shadow: var(--shadow-2);
+  font-size: 20px;
+}
+
+.timeline .h3 {
+  color: var(--white-2);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.timeline .h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--vegas-gold);
+}
+
+/* Timeline list */
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 35px; /* adds air between entries */
+  margin-left: 45px;
+}
+
+/* Each job entry */
+.timeline-item-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white-2);
+  margin-bottom: 4px;
+}
+
+.timeline-item span {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--light-gray-70);
+  margin-bottom: 10px;
+}
+
+.timeline-text {
+  line-height: 1.8;
+  font-size: 0.95rem;
+  color: var(--light-gray);
+}
+
+/* Add space between Education and Experience */
+.timeline + .timeline {
+  margin-top: 30px;
+}
+
+/* Education visual tweak */
+.timeline-item strong {
+  color: var(--vegas-gold);
+}
+/* === Make all links visibly clickable === */
+a {
+  text-decoration: underline;
+  text-decoration-color: var(--vegas-gold); /* gold accent underline */
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--vegas-gold);
+  text-decoration-thickness: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+}

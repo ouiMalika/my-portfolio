@@ -1,0 +1,13 @@
+[
+  {
+    "title": "VisionBoard AI",
+    "desc": "AI-based clustering of images for vision boards using CLIP embeddings.",
+    "image": "/images/research/visionboard.jpg",
+    "video": "/videos/research/ai-demo.mp4"
+  },
+  {
+    "title": "Plastic Threat Study",
+    "desc": "Mixed-methods analysis of recycling awareness and policy gaps in Kazakhstan.",
+    "image": "/images/research/plastic-threat.jpg"
+  }
+]

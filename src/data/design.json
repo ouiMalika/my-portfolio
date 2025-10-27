@@ -1,0 +1,13 @@
+[
+  {
+    "title": "Barracuda HydroGoggles",
+    "desc": "Retro-futuristic eyewear concept inspired by the 1971 Plymouth Cuda.",
+    "image": "/images/design/barracuda.jpg",
+    "video": "/videos/design/goggles-demo.mp4"
+  },
+  {
+    "title": "VisionBoard UI",
+    "desc": "Minimalist interface for AI-driven moodboards.",
+    "image": "/images/design/visionboard-ui.jpg"
+  }
+]
