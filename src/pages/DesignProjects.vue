@@ -212,8 +212,7 @@ function goToRender(i) {
   currentRender.value = i
   const track = renderTrack.value
   if (!track) return
-  const slide = track.children[i]
-  slide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+  track.scrollTo({ left: track.clientWidth * i, behavior: 'smooth' })
 }
 
 function nextRender() {
