@@ -97,14 +97,14 @@
             Replace the src attribute below.
           -->
           <model-viewer
-            src="/models/icarus-sandals.glb"
+            :src="modelSrc"
             alt="Icarus Sandals 3D model"
             auto-rotate
             camera-controls
             shadow-intensity="1"
             exposure="1.1"
             class="model-viewer"
-            poster="/images/design/icarus-sandals/model-poster.jpg"
+            :poster="modelPoster"
           >
             <div slot="progress-bar" class="model-loading">
               <div class="model-loading-bar" />
@@ -123,7 +123,7 @@
             File goes in: public/videos/icarus-turntable.mp4
           -->
           <video
-            src="/videos/icarus-turntable.mp4"
+            :src="turntableVideo"
             autoplay
             loop
             muted
@@ -196,6 +196,11 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+
+// ── Public asset paths (runtime, not bundled by Vite) ────────────
+const modelSrc = '/models/icarus-sandals.glb'
+const modelPoster = '/images/design/icarus-sandals/model-poster.jpg'
+const turntableVideo = '/videos/icarus-turntable.mp4'
 
 // ── Render carousel ──────────────────────────────
 const renderTrack = ref(null)
