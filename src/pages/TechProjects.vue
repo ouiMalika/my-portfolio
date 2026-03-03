@@ -13,7 +13,7 @@
       <div class="timeline-list">
         <div class="timeline-item">
           <p class="timeline-text">
-            <a href="https://github.com/ouiMalika/VisionBoard-AI" target="_blank" rel="noopener">
+            <a href="https://visionboard-ai-xi.vercel.app" target="_blank" rel="noopener">
               <strong>VisionBoard AI</strong>
             </a>
             is a full-stack AI application that automatically clusters images into thematic groups
@@ -48,6 +48,34 @@
             <span class="tag">AWS S3</span>
             <span class="tag">HuggingFace</span>
           </div>
+
+          <!-- Live UI Preview Card -->
+          <div class="site-preview">
+            <div class="browser-bar">
+              <div class="browser-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="browser-url">visionboard-ai-xi.vercel.app</div>
+            </div>
+            <div class="preview-body">
+              <iframe
+                src="https://visionboard-ai-xi.vercel.app"
+                title="VisionBoard AI Live Preview"
+                scrolling="no"
+                loading="lazy"
+                class="site-iframe"
+              ></iframe>
+              <a
+                href="https://visionboard-ai-xi.vercel.app"
+                target="_blank"
+                rel="noopener"
+                class="preview-overlay"
+                aria-label="Open VisionBoard AI"
+              >
+                <span class="preview-cta">Open App ↗</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -68,5 +96,96 @@
   padding: 3px 10px;
   font-size: 12px;
   font-weight: 500;
+}
+
+/* --- VisionBoard AI Live Preview Card --- */
+.site-preview {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-3);
+  border: 1px solid hsl(240, 2%, 28%);
+  margin-top: 22px;
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: hsl(240, 2%, 20%);
+  padding: 8px 14px;
+  border-bottom: 1px solid hsl(240, 2%, 28%);
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.browser-dots span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.browser-dots span:nth-child(1) { background: #ff5f57; }
+.browser-dots span:nth-child(2) { background: #ffbd2e; }
+.browser-dots span:nth-child(3) { background: #28c840; }
+
+.browser-url {
+  flex: 1;
+  background: hsl(240, 2%, 15%);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.74rem;
+  color: hsl(0, 0%, 55%);
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preview-body {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+  background: hsl(240, 2%, 12%);
+}
+
+.site-iframe {
+  width: 200%;
+  height: 680px;
+  border: none;
+  transform: scale(0.5);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.preview-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 14px;
+  background: linear-gradient(to bottom, transparent 55%, rgba(0, 0, 0, 0.5) 100%);
+  text-decoration: none;
+  transition: background 0.25s ease;
+}
+
+.preview-overlay:hover {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.65) 100%);
+}
+
+.preview-cta {
+  background: hsl(45, 100%, 72%);
+  color: hsl(240, 10%, 10%);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: transform 0.2s ease;
+}
+
+.preview-overlay:hover .preview-cta {
+  transform: scale(1.06);
 }
 </style>
