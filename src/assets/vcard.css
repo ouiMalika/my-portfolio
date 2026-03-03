@@ -1,11 +1,19 @@
 :root {
-  --bg-dark: #1d1d1d;
-  --panel-dark: #222;
-  --accent: #f3c623;
-  --text-light: #e8e8e8;
-  --text-gray: #b3b3b3;
+  --bg: #f5f4f0;
+  --panel: #ffffff;
+  --accent: #b8921a;
+  --vegas-gold: #b8921a;
+  --text: #1a1a1a;
+  --text-muted: #666;
+  --border: #e8e5df;
+  --white-2: #1a1a1a;
+  --light-gray: #2d2d2d;
+  --light-gray-70: #777;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  --shadow-2: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 4px 24px rgba(0, 0, 0, 0.09);
+  --border-gradient-onyx: #f0ede5;
   --radius: 20px;
-  --shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   --font-main: "Poppins", sans-serif;
   --transition: 0.3s ease;
 }
@@ -24,8 +32,8 @@ img { display: block; max-width: 100%; }
 
 /* Base */
 body {
-  background: var(--bg-dark);
-  color: var(--text-light);
+  background: var(--bg);
+  color: var(--text);
   font-family: var(--font-main);
   overflow-x: hidden;
 }
@@ -40,8 +48,8 @@ body {
 .sidebar {
   width: 300px;
   height: 100vh;
-  background: var(--panel-dark);
-  border-right: 1px solid #2c2c2c;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
   padding: 40px 25px;
   box-shadow: var(--shadow);
   position: fixed;
@@ -67,12 +75,13 @@ body {
 }
 .info-content .title {
   display: inline-block;
-  background: #333;
-  padding: 5px 12px;
+  background: var(--border-gradient-onyx);
+  padding: 6px 14px;
   font-size: 0.8rem;
-  color: var(--text-gray);
-  border-radius: 10px;
-  margin: 10px auto;
+  color: var(--text-muted);
+  border-radius: 12px;
+  margin: 8px auto 0;
+  font-weight: 400;
 }
 .info_more-btn {
   background: none;
@@ -84,7 +93,7 @@ body {
 }
 .separator {
   height: 1px;
-  background: #2c2c2c;
+  background: var(--border);
   margin: 20px 0;
 }
 .contacts-list {
@@ -95,7 +104,7 @@ body {
 .icon-box {
   width: 32px;
   height: 32px;
-  background: #2c2c2c;
+  background: var(--border-gradient-onyx);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -109,14 +118,16 @@ body {
 }
 .contact-title {
   font-size: 0.7rem;
-  color: var(--text-gray);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 .contact-link {
   font-size: 0.85rem;
-  color: var(--text-light);
+  color: var(--text);
 }
 
-/* --- Sidebar Refinements --- */
+/* Sidebar info wrapper */
 .sidebar-info {
   display: flex;
   flex-direction: column;
@@ -124,29 +135,17 @@ body {
   text-align: center;
 }
 
-.info-content .title {
-  display: inline-block;
-  margin: 8px auto 0;
-  background: #333;
-  color: var(--text-gray);
-  padding: 6px 14px;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 400;
-}
-
 .contact-link em {
   font-style: italic;
-  color: var(--vegas-gold);
+  color: var(--accent);
   font-weight: 500;
 }
 
-/* --- Sidebar subtitle style --- */
 .subtitle {
-  color: var(--vegas-gold);
+  color: var(--accent);
   font-size: 0.9rem;
   font-weight: 400;
-  margin-top: 6px;    
+  margin-top: 6px;
   margin-bottom: 2px;
   text-align: center;
 }
@@ -160,11 +159,12 @@ body {
 
 /* Navbar */
 .navbar {
-  background: var(--panel-dark);
+  background: var(--panel);
   border-radius: var(--radius);
   padding: 20px 40px;
   margin-bottom: 40px;
   box-shadow: var(--shadow);
+  border: 1px solid var(--border);
 }
 .navbar-list {
   display: flex;
@@ -172,7 +172,7 @@ body {
   gap: 40px;
 }
 .navbar-link {
-  color: var(--text-gray);
+  color: var(--text-muted);
   font-size: 0.9rem;
   transition: var(--transition);
 }
@@ -184,10 +184,11 @@ body {
 
 /* Article / sections */
 article {
-  background: var(--panel-dark);
+  background: var(--panel);
   border-radius: var(--radius);
   padding: 40px;
   box-shadow: var(--shadow);
+  border: 1px solid var(--border);
 }
 .h2 {
   font-size: 1.5rem;
@@ -200,7 +201,8 @@ article {
   margin-top: 20px;
 }
 .service-item {
-  background: #2c2c2c;
+  background: var(--bg);
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 25px;
   transition: var(--transition);
@@ -212,7 +214,7 @@ article {
   margin-bottom: 10px;
 }
 .service-item-text {
-  color: var(--text-gray);
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 
@@ -220,14 +222,8 @@ article {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-.timeline-item-title {
-  color: var(--vegas-gold);
-  font-weight: 600;
-}
 
-/* === ABOUT PAGE REFINEMENT === */
-
-/* Section spacing */
+/* === ABOUT PAGE === */
 .about-text {
   margin-bottom: 50px;
   line-height: 1.75;
@@ -235,11 +231,10 @@ article {
   color: var(--light-gray);
 }
 
-/* Title spacing and weight */
 .timeline .title-wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;               /* space between icon and title */
+  gap: 12px;
   margin-bottom: 25px;
 }
 
@@ -258,26 +253,18 @@ article {
 }
 
 .timeline .h3 {
-  color: var(--white-2);
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-
-.timeline .h3 {
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--vegas-gold);
 }
 
-/* Timeline list */
 .timeline-list {
   display: flex;
   flex-direction: column;
-  gap: 35px; /* adds air between entries */
+  gap: 35px;
   margin-left: 45px;
 }
 
-/* Each job entry */
 .timeline-item-title {
   font-size: 1rem;
   font-weight: 600;
@@ -298,24 +285,23 @@ article {
   color: var(--light-gray);
 }
 
-/* Add space between Education and Experience */
 .timeline + .timeline {
   margin-top: 30px;
 }
 
-/* Education visual tweak */
 .timeline-item strong {
-  color: var(--vegas-gold);
+  color: var(--accent);
 }
-/* === Make all links visibly clickable === */
+
+/* Links */
 a {
   text-decoration: underline;
-  text-decoration-color: var(--vegas-gold); /* gold accent underline */
+  text-decoration-color: var(--accent);
   text-underline-offset: 3px;
 }
 
 a:hover {
-  color: var(--vegas-gold);
+  color: var(--accent);
   text-decoration-thickness: 2px;
 }
 
