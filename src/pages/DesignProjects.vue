@@ -112,28 +112,6 @@
           </model-viewer>
         </div>
 
-        <!-- Turntable video -->
-        <div class="video-block">
-          <div class="viewer-label">
-            <ion-icon name="videocam-outline" />
-            Turntable Render
-          </div>
-          <!--
-            DROP YOUR TURNTABLE VIDEO HERE.
-            File goes in: public/videos/icarus-turntable.mp4
-          -->
-          <video
-            :src="turntableVideo"
-            autoplay
-            loop
-            muted
-            playsinline
-            class="turntable-video"
-          >
-            Your browser does not support video.
-          </video>
-        </div>
-
         <!-- Angle renders carousel -->
         <div class="viewer-label" style="margin-top: 32px;">
           <ion-icon name="images-outline" />
@@ -200,7 +178,6 @@ import { ref, onMounted, onUnmounted } from 'vue'
 // ── Public asset paths (runtime, not bundled by Vite) ────────────
 const modelSrc = '/models/icarus-sandals.glb'
 const modelPoster = '/images/design/icarus-sandals/model-poster.jpg'
-const turntableVideo = '/videos/icarus-turntable.mp4'
 
 // ── Render carousel ──────────────────────────────
 const renderTrack = ref(null)
@@ -434,17 +411,6 @@ model-viewer.model-viewer {
 @keyframes loading-slide {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(350%); }
-}
-
-/* ── Turntable video ─────────────────────────── */
-.turntable-video {
-  width: 100%;
-  max-height: 480px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-3);
-  object-fit: cover;
-  background: var(--bg);
 }
 
 /* ── Render carousel ─────────────────────────── */
