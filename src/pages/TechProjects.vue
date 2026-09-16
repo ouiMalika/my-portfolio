@@ -117,6 +117,34 @@
             </a>
           </p>
 
+          <!-- Live UI Preview Card -->
+          <div class="site-preview">
+            <div class="browser-bar">
+              <div class="browser-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="browser-url">nodemind.vercel.app</div>
+            </div>
+            <div class="preview-body">
+              <iframe
+                :src="demoUrl"
+                title="NodeMind Live Preview"
+                scrolling="no"
+                loading="lazy"
+                class="site-iframe"
+              ></iframe>
+              <a
+                :href="demoUrl"
+                target="_blank"
+                rel="noopener"
+                class="preview-overlay"
+                aria-label="Open NodeMind"
+              >
+                <span class="preview-cta">Open App ↗</span>
+              </a>
+            </div>
+          </div>
+
           <div class="media-row">
             <div class="media-item poster-box">
               <a :href="demoUrl" target="_blank" rel="noopener">
@@ -132,14 +160,24 @@
             </div>
           </div>
 
-          <p class="timeline-text tech-stack">
-            <strong>Stack:</strong> Python (Flask, psycopg2, pandas) · React · Vite · Recharts ·
-            TimescaleDB · PostgreSQL · S3 / Iceberg (Parquet) · Docker · GitLab CI · Kubernetes ·
-            OPC UA information modelling
-          </p>
+          <div class="tech-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Flask</span>
+            <span class="tag">React</span>
+            <span class="tag">Vite</span>
+            <span class="tag">Recharts</span>
+            <span class="tag">TimescaleDB</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Iceberg / Parquet</span>
+            <span class="tag">Docker</span>
+            <span class="tag">GitLab CI</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">OPC UA</span>
+          </div>
         </div>
       </div>
     </section>
+
 
     <!-- MINI KAFKA -->
     <section class="timeline" id="mini-kafka">
@@ -267,11 +305,16 @@
             </a>
           </p>
 
-          <p class="timeline-text tech-stack">
-            <strong>Stack:</strong> C++17 · POSIX sockets · pthreads · custom line protocol ·
-            murmur2 partitioning · synchronous primary-backup replication · Python and matplotlib
-            for the benchmark harness
-          </p>
+          <div class="tech-tags">
+            <span class="tag">C++17</span>
+            <span class="tag">POSIX sockets</span>
+            <span class="tag">pthreads</span>
+            <span class="tag">Custom wire protocol</span>
+            <span class="tag">murmur2</span>
+            <span class="tag">Primary-backup replication</span>
+            <span class="tag">Python</span>
+            <span class="tag">matplotlib</span>
+          </div>
         </div>
       </div>
     </section>
@@ -395,43 +438,91 @@
             with all three years loaded, and the repo has a one-command launcher.
           </p>
 
-          <p class="timeline-text tech-stack">
-            <strong>Stack:</strong> Python · Apache Kafka (Docker Compose) · kafka-python-ng ·
-            SQLite with WAL · pandas · Streamlit
-          </p>
+          <div class="tech-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Apache Kafka</span>
+            <span class="tag">Docker Compose</span>
+            <span class="tag">kafka-python-ng</span>
+            <span class="tag">SQLite (WAL)</span>
+            <span class="tag">pandas</span>
+            <span class="tag">Streamlit</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- VISIONBOARD AI -->
     <section class="timeline" id="visionboard-ai">
       <div class="title-wrapper">
-        <div class="icon-box"><ion-icon name="images-outline" /></div>
-        <h3 class="h3">VisionBoard AI — Image Clustering &amp; Moodboards</h3>
+        <div class="icon-box"><ion-icon name="color-wand-outline" /></div>
+        <h3 class="h3">VisionBoard AI</h3>
       </div>
 
       <div class="timeline-list">
         <div class="timeline-item">
           <p class="timeline-text">
-            A full-stack platform that clusters images by visual similarity using
-            <strong>OpenAI CLIP</strong> embeddings and K-Means, producing themed mood boards with
-            AI-generated tags. Uploads go to S3, and an asynchronous pipeline (Celery + Redis) runs
-            the embedding and clustering work off the request path.
-          </p>
-          <p class="timeline-text">
-            I replaced a Kubernetes deployment with a free-tier multi-platform architecture —
-            HuggingFace Spaces for the API and worker, Vercel for the front end, Upstash Redis and
-            Neon Postgres — for cost-free cloud deployment of the CLIP inference pipeline.
-          </p>
-          <p class="timeline-text">
-            <a href="https://github.com/ouiMalika/VisionBoard-AI" target="_blank" rel="noopener" class="inline-link">
-              Source on GitHub
+            <a href="https://visionboard-ai-xi.vercel.app" target="_blank" rel="noopener">
+              <strong>VisionBoard AI</strong>
             </a>
+            is a full-stack AI application that automatically clusters images into thematic groups
+            for vision boards. Users upload a set of images and receive semantically organized
+            clusters — no manual sorting needed.
           </p>
-          <p class="timeline-text tech-stack">
-            <strong>Stack:</strong> Angular · Django REST · Celery · Redis · PostgreSQL · AWS S3 ·
-            Docker · Vercel · CLIP
+
+          <p class="timeline-text">
+            The backend uses <strong>OpenAI CLIP</strong> to embed each image into a high-dimensional
+            vector space, then applies <strong>K-Means clustering</strong> to group visually and
+            semantically similar images together. Image processing runs asynchronously via
+            <strong>Celery</strong> workers backed by <strong>Redis</strong>, so the UI stays
+            responsive even for large batches. The REST API is built with
+            <strong>Django REST Framework</strong>, persists data in <strong>PostgreSQL</strong>
+            (Neon), and stores images on <strong>AWS S3</strong>.
           </p>
+
+          <p class="timeline-text">
+            The frontend is an <strong>Angular</strong> SPA deployed on
+            <a href="https://malikab-visionboard-api.hf.space" target="_blank" rel="noopener" class="inline-link">HuggingFace Spaces</a>
+            (API + worker) and <strong>Vercel</strong> (frontend). Source code on
+            <a href="https://github.com/ouiMalika/VisionBoard-AI" target="_blank" rel="noopener" class="inline-link">GitHub</a>.
+          </p>
+
+          <div class="tech-tags">
+            <span class="tag">CLIP</span>
+            <span class="tag">Django</span>
+            <span class="tag">Celery</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Redis</span>
+            <span class="tag">Angular</span>
+            <span class="tag">AWS S3</span>
+            <span class="tag">HuggingFace</span>
+          </div>
+
+          <!-- Live UI Preview Card -->
+          <div class="site-preview">
+            <div class="browser-bar">
+              <div class="browser-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="browser-url">visionboard-ai-xi.vercel.app</div>
+            </div>
+            <div class="preview-body">
+              <iframe
+                src="https://visionboard-ai-xi.vercel.app"
+                title="VisionBoard AI Live Preview"
+                scrolling="no"
+                loading="lazy"
+                class="site-iframe"
+              ></iframe>
+              <a
+                href="https://visionboard-ai-xi.vercel.app"
+                target="_blank"
+                rel="noopener"
+                class="preview-overlay"
+                aria-label="Open VisionBoard AI"
+              >
+                <span class="preview-cta">Open App ↗</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -446,7 +537,111 @@ const kafkaReport = 'https://github.com/ouiMalika/mini-kafka/blob/main/CSE_376_F
 const marathonRepo = 'https://github.com/ouiMalika/marathon-dashboard'
 </script>
 
+<style src="../assets/research.css"></style>
 <style scoped>
+.tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.tag {
+  background: hsl(240, 2%, 20%);
+  color: hsl(45, 100%, 72%);
+  border: 1px solid hsl(240, 2%, 28%);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* --- VisionBoard AI Live Preview Card --- */
+.site-preview {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-3);
+  border: 1px solid hsl(240, 2%, 28%);
+  margin-top: 22px;
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: hsl(240, 2%, 20%);
+  padding: 8px 14px;
+  border-bottom: 1px solid hsl(240, 2%, 28%);
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.browser-dots span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.browser-dots span:nth-child(1) { background: #ff5f57; }
+.browser-dots span:nth-child(2) { background: #ffbd2e; }
+.browser-dots span:nth-child(3) { background: #28c840; }
+
+.browser-url {
+  flex: 1;
+  background: hsl(240, 2%, 15%);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.74rem;
+  color: hsl(0, 0%, 55%);
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preview-body {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+  background: hsl(240, 2%, 12%);
+}
+
+.site-iframe {
+  width: 200%;
+  height: 680px;
+  border: none;
+  transform: scale(0.5);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.preview-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 14px;
+  background: linear-gradient(to bottom, transparent 55%, rgba(0, 0, 0, 0.5) 100%);
+  text-decoration: none;
+  transition: background 0.25s ease;
+}
+
+.preview-overlay:hover {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.65) 100%);
+}
+
+.preview-cta {
+  background: hsl(45, 100%, 72%);
+  color: hsl(240, 10%, 10%);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: transform 0.2s ease;
+}
+
+.preview-overlay:hover .preview-cta {
+  transform: scale(1.06);
+}
+
+/* --- Case-study sections (NodeMind, Mini Kafka, Marathon) --- */
 .case-h4 {
   margin: 22px 0 8px;
   font-size: 15px;
@@ -458,7 +653,7 @@ const marathonRepo = 'https://github.com/ouiMalika/marathon-dashboard'
   font-size: 13px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--vegas-gold, #d4af37);
+  color: hsl(45, 100%, 72%);
   margin-bottom: 10px;
 }
 
@@ -471,9 +666,9 @@ const marathonRepo = 'https://github.com/ouiMalika/marathon-dashboard'
 
 .case-metric {
   padding: 12px 14px;
-  border-radius: var(--radius, 14px);
-  background: var(--panel-dark, rgba(255, 255, 255, 0.03));
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: hsl(240, 2%, 20%);
+  border: 1px solid hsl(240, 2%, 28%);
 }
 
 .case-metric-value {
@@ -481,7 +676,7 @@ const marathonRepo = 'https://github.com/ouiMalika/marathon-dashboard'
   font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--vegas-gold, #d4af37);
+  color: hsl(45, 100%, 72%);
 }
 
 .case-metric-label {
@@ -489,11 +684,11 @@ const marathonRepo = 'https://github.com/ouiMalika/marathon-dashboard'
   margin-top: 3px;
   font-size: 12.5px;
   line-height: 1.4;
-  color: var(--text-gray, #b0b0b0);
+  color: hsl(0, 0%, 62%);
 }
 
-/* Screenshots on this page are wide captures, not posters: let them size
-   naturally instead of inheriting the fixed 420px poster height. */
+/* Screenshots here are wide captures, not posters, so let them size naturally
+   rather than inherit the fixed 420px poster height from research.css. */
 .media-row {
   grid-template-columns: 1fr 1fr;
   gap: 18px;
@@ -504,8 +699,8 @@ const marathonRepo = 'https://github.com/ouiMalika/marathon-dashboard'
 .media-row .poster-img {
   height: auto;
   object-fit: contain;
-  background: var(--panel-dark, rgba(255, 255, 255, 0.03));
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: hsl(240, 2%, 15%);
+  border: 1px solid hsl(240, 2%, 28%);
 }
 
 .media-item.wide,
@@ -525,14 +720,14 @@ const marathonRepo = 'https://github.com/ouiMalika/marathon-dashboard'
   font-size: 0.88em;
   padding: 1px 5px;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.07);
-  color: var(--white-2, #fafafa);
+  background: hsl(240, 2%, 20%);
+  color: hsl(45, 100%, 82%);
 }
 
 .note-line {
   font-size: 13px;
-  color: var(--text-gray, #b0b0b0);
-  border-left: 2px solid rgba(255, 255, 255, 0.12);
+  color: hsl(0, 0%, 58%);
+  border-left: 2px solid hsl(240, 2%, 28%);
   padding-left: 12px;
 }
 
@@ -540,11 +735,5 @@ const marathonRepo = 'https://github.com/ouiMalika/marathon-dashboard'
   .media-row {
     grid-template-columns: 1fr;
   }
-}
-
-.tech-stack {
-  font-size: 13px;
-  color: var(--text-gray, #b0b0b0);
-  margin-top: 18px;
 }
 </style>

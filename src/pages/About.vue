@@ -40,9 +40,20 @@
       <ul class="timeline-list">
         <li class="timeline-item">
           <h4 class="timeline-item-title">
+            Rossin Research Scholar — <a href="https://engineering.lehigh.edu" target="_blank" rel="noopener">P.C. Rossin College of Engineering</a>
+          </h4>
+          <span>Jan 2026 – Present | Lehigh University, Bethlehem, PA</span>
+          <p class="timeline-text">
+            Developing a visual hierarchical perception model for autonomous driving that constructs symbolic refinement trees through incremental resolution to inform utility-based planning under uncertainty.<br />
+            Implementing a Grounded SAM-2 pipeline for zero-shot traffic sign detection and tracking on nuScenes data, benchmarking Florence-2, constrained VQA, and Claude VLM for symbolic label extraction.
+          </p>
+        </li>
+
+        <li class="timeline-item">
+          <h4 class="timeline-item-title">
             Grader — CSE 017
           </h4>
-          <span>May 2024 – Present | Lehigh University, Bethlehem, PA</span>
+          <span>May 2024 – December 2025 | Lehigh University, Bethlehem, PA</span>
           <p class="timeline-text">
             Grade 20+ students' weekly programming and lab assignments for the Programming and Data Structures course.
           </p>

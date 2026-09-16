@@ -54,7 +54,7 @@
 
 .poster-img:hover {
   transform: scale(1.03);
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.14);
 }
 
 .poster-caption {
@@ -75,15 +75,15 @@
 
 /* Inline link styling */
 .inline-link {
-  color: var(--vegas-gold);
+  color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: 0.2s ease;
 }
 
 .inline-link:hover {
-  color: var(--white-2);
-  text-decoration-color: var(--white-2);
+  color: #7a5e00;
+  text-decoration-color: #7a5e00;
 }
 
 /* Responsive stacking for mobile */
@@ -121,7 +121,7 @@
 
 #save-tuba-gallery .poster-img:hover {
   transform: scale(1.04);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 900px) {
