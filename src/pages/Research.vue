@@ -4,6 +4,99 @@
       <h2 class="h2 article-title">Research</h2>
     </header>
 
+    <!-- CALM -->
+    <section class="timeline" id="calm">
+      <div class="title-wrapper">
+        <div class="icon-box"><ion-icon name="navigate-outline" /></div>
+        <h3 class="h3">CALM — Risk-Aware Planning from Calibrated Perception</h3>
+      </div>
+
+      <div class="timeline-list">
+        <div class="timeline-item">
+          <p class="timeline-text">
+            <strong>CALM</strong> is a planning pipeline for urban driving that treats a
+            vision–language model as what it actually is — a component that is sometimes
+            confident and wrong. Rather than trusting a model's reading of a traffic sign or
+            signal outright, it carries that uncertainty forward into the decision, so the
+            action a vehicle takes can be traced back to what was known and how well it was
+            known.
+          </p>
+
+          <p class="timeline-text">
+            Perception runs through <strong>Grounding DINO</strong> and
+            <strong>Qwen2-VL</strong>; <strong>conformal calibration</strong> converts raw model
+            confidence into statistically valid bounds; and a <strong>MILP planner</strong>
+            selects an action that stays safe across everything those bounds still allow. The
+            system is evaluated on the <a href="https://www.nuscenes.org/" target="_blank" rel="noopener" class="inline-link">nuScenes</a>
+            autonomous-driving dataset. Developed in Lehigh's Autonomy &amp; Intelligent
+            Robotics Lab under Prof. Cristian-Ioan Vasile and Prof. Aparna Bharati.
+          </p>
+
+          <p class="timeline-text">
+            Accepted as a poster at the
+            <a href="https://nerc2026.github.io/" target="_blank" rel="noopener" class="inline-link">
+              Northeast Robotics Colloquium (NERC 2026)
+            </a>
+            at Princeton University, October 2026, and at two IROS 2026 workshops in Pittsburgh:
+            <a href="https://rethinking-uncertainty.github.io/" target="_blank" rel="noopener" class="inline-link">
+              Rethinking Uncertainty for Modern Robotics Paradigms
+            </a>
+            and
+            <a href="https://sites.google.com/bu.edu/hybridarchforautonomy" target="_blank" rel="noopener" class="inline-link">
+              Hybrid Architectures for Embodied Autonomy: Bridging Learning, Planning, and Control
+            </a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BETTER READ THAN SAID -->
+    <section class="timeline" id="better-read-than-said">
+      <div class="title-wrapper">
+        <div class="icon-box"><ion-icon name="grid-outline" /></div>
+        <h3 class="h3">Better Read Than Said</h3>
+      </div>
+
+      <div class="timeline-list">
+        <div class="timeline-item">
+          <p class="timeline-text">
+            <strong>Better Read Than Said: Locating Spatial-Planning Failure at the Output
+            Interface of Vision–Language Models</strong> asks a diagnostic question. When a
+            vision–language model fails to plan a route, which part of it broke — the
+            representation it formed of the scene, or the step that turns that representation
+            into a move it writes down?
+          </p>
+
+          <p class="timeline-text">
+            We separate the two on grid mazes from the Visual Spatial Planning benchmark, where
+            breadth-first search on the ground-truth map scores every proposed move exactly. From
+            a single forward pass under one prompt, we compare five ways of getting a next move
+            out of one frozen hidden state: two that read what the model writes, and three that
+            fit a classifier on its frozen activations. Six open models across three families.
+          </p>
+
+          <p class="timeline-text">
+            The classifiers recover an optimal move far more often than five of the six models
+            manage to write one. Within a family, the written plan improves with parameter count
+            while the classifier stays flat — so scale is buying better <em>access</em> to
+            spatial information the model already encodes at the smallest size we measured. The
+            same pattern shows up one level down, on the agent's own coordinates, and again in
+            perception, where feeding the model's hazard estimates back in as a hard constraint
+            scores worse than ignoring them. Together these locate an
+            <strong>action-emission bottleneck</strong> rather than a perception one.
+          </p>
+
+          <p class="timeline-text">
+            Accepted at the
+            <a href="https://rethinking-uncertainty.github.io/" target="_blank" rel="noopener" class="inline-link">
+              Rethinking Uncertainty for Modern Robotics Paradigms
+            </a>
+            workshop at IROS 2026, Pittsburgh.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- ARCHIVE OF QUEER CARE -->
     <section class="timeline" id="archive-of-queer-care">
       <div class="title-wrapper">

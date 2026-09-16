@@ -6,102 +6,28 @@
 
     <section class="about-text">
       <p>
-        I’m Malika — I study Computer Science &amp; Engineering and Product Design at Lehigh,
-        graduating in 2027. Those two degrees are less of a split than they sound: both are
-        about finding the real problem before building the thing, and I’ve ended up doing that
-        on fab floors, in driving datasets, and on a whiteboard with a professor.
+        I’m Malika, an international student from Almaty, Kazakhstan — the city of mountains
+        and apples. I study Computer Science &amp; Engineering and Product Design at Lehigh
+        University, graduating in May 2027.
       </p>
       <p>
-        Right now I work on <strong>vision–language models that have to make decisions</strong> —
-        when a model reads a traffic sign and isn’t sure, what should the car actually do? — and
-        on <strong>data infrastructure</strong>, the unglamorous plumbing that decides whether
-        anyone can answer a question in four seconds or four minutes.
+        I do research in Lehigh’s
+        <a href="https://idisc.lehigh.edu/research/autonomy-intelligent-robotics-lab-air-lab" target="_blank" rel="noopener" class="inline-link">Autonomy &amp; Intelligent Robotics Lab</a>,
+        advised by
+        <a href="https://engineering.lehigh.edu/faculty/cristian-ioan-vasile" target="_blank" rel="noopener" class="inline-link">Prof. Cristian-Ioan Vasile</a>
+        and
+        <a href="https://engineering.lehigh.edu/faculty/aparna-bharati" target="_blank" rel="noopener" class="inline-link">Prof. Aparna Bharati</a>.
+        My work is on vision–language models used for driving and embodied agents: how to tell
+        what these models actually know, and what a system should do when they are not sure.
       </p>
       <p>
-        When I’m not doing that, I’m usually running (first half marathon, April 2026), teaching —
-        I’ve been a TA long enough to have opinions about it — or taking apart a system I only
-        knew as a black box, which is how most of the projects on this site started.
+        Alongside research I build data infrastructure and full-stack systems. Outside of it,
+        I dance and make visual art.
       </p>
 
-      <ul class="honors">
-        <li><span class="honor-tag">Award</span> Lehigh Future Maker Award</li>
-        <li><span class="honor-tag">Award</span> Trustees’ Scholarship</li>
-        <li><span class="honor-tag">Award</span> IEEE GHTC 2023 Best Student Presentation</li>
-      </ul>
-    </section>
-
-    <!-- RESEARCH -->
-    <section class="timeline" id="research">
-      <div class="title-wrapper">
-        <div class="icon-box"><ion-icon name="document-text-outline" /></div>
-        <h3 class="h3">Research</h3>
-      </div>
-
-      <ul class="timeline-list">
-        <li class="timeline-item">
-          <h4 class="timeline-item-title">
-            CALM — Calibrated Vision-Language Perception for Risk-Aware Action Selection in Urban Driving
-          </h4>
-          <span>AIR Lab, Lehigh University</span>
-          <p class="timeline-text">
-            A vision–language model looking at a road scene will sometimes be confident and wrong.
-            CALM takes those uncertain readings of traffic signs and signals and turns them into
-            driving decisions you can actually audit — Grounding DINO and Qwen2-VL for perception,
-            conformal calibration to put honest error bars on what the model claims, and MILP
-            planning to choose an action given those bounds. Evaluated on the nuScenes
-            autonomous-driving dataset.
-          </p>
-          <p class="timeline-text venue-line">
-            <span class="venue-tag">Poster</span>
-            <a href="https://nerc2026.github.io/" target="_blank" rel="noopener" class="inline-link">
-              NERC 2026
-            </a>
-            — Northeast Robotics Colloquium, Princeton University, October 3, 2026
-          </p>
-          <p class="timeline-text venue-line">
-            <span class="venue-tag">Workshop</span>
-            <a href="https://rethinking-uncertainty.github.io/" target="_blank" rel="noopener" class="inline-link">
-              Rethinking Uncertainty for Modern Robotics Paradigms
-            </a>
-            — IROS 2026, Pittsburgh
-          </p>
-          <p class="timeline-text venue-line">
-            <span class="venue-tag">Workshop</span>
-            <a href="https://sites.google.com/bu.edu/hybridarchforautonomy" target="_blank" rel="noopener" class="inline-link">
-              Hybrid Architectures for Embodied Autonomy: Bridging Learning, Planning and Control (BLPC)
-            </a>
-            — IROS 2026, Pittsburgh
-          </p>
-        </li>
-
-        <li class="timeline-item">
-          <h4 class="timeline-item-title">
-            Better Read Than Said — Locating Spatial-Planning Failure at the Output Interface of Vision–Language Models
-          </h4>
-          <span>AIR Lab, Lehigh University</span>
-          <p class="timeline-text">
-            When a vision–language model fails to plan a route, which part broke — what it
-            understood about the scene, or the step that turns understanding into a written move?
-            We separate the two on grid mazes where breadth-first search can score every proposed
-            move exactly, comparing what six open models <em>write</em> against what a classifier
-            can read directly from their frozen hidden states.
-          </p>
-          <p class="timeline-text">
-            The classifiers recover an optimal move far more often than five of the six models
-            manage to write one. Within a model family, the written plan improves with parameter
-            count while the probe stays flat — so scale is buying better <em>access</em> to spatial
-            information the model already encodes at the smallest size we measured. That points at
-            an action-emission bottleneck, not a perception one.
-          </p>
-          <p class="timeline-text venue-line">
-            <span class="venue-tag">Workshop</span>
-            <a href="https://rethinking-uncertainty.github.io/" target="_blank" rel="noopener" class="inline-link">
-              Rethinking Uncertainty for Modern Robotics Paradigms
-            </a>
-            — IROS 2026, Pittsburgh
-          </p>
-        </li>
-      </ul>
+      <p class="honors-line">
+        Lehigh Future Maker Award · Trustees’ Scholarship · IEEE GHTC 2023 Best Student Presentation
+      </p>
     </section>
 
    <!-- EDUCATION -->
@@ -165,7 +91,7 @@
             one on risk-aware planning from calibrated VLM perception and one locating where
             spatial planning breaks down inside open models.
             <br />
-            <a href="#research" class="inline-link">See research ↑</a>
+            <RouterLink to="/research" class="inline-link">See research → CALM, Better Read Than Said</RouterLink>
           </p>
         </li>
 
@@ -346,28 +272,12 @@
 
 <style src="../assets/research.css"></style>
 <style scoped>
-/* Honors under the intro */
-.honors {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+/* Awards sit under the intro as one quiet line, not as pills — they should
+   register on a second read, not compete with the first paragraph. */
+.honors-line {
   margin-top: 18px;
-  padding: 0;
-  list-style: none;
-}
-
-/* The chip is dark in both themes, so its text is set explicitly rather than
-   inherited — otherwise the light theme paints dark text on a dark chip. */
-.honors li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13.5px;
-  color: hsl(0, 0%, 88%);
-  background: hsl(240, 2%, 20%);
-  border: 1px solid hsl(240, 2%, 28%);
-  border-radius: 8px;
-  padding: 7px 12px;
+  font-size: 13px;
+  color: hsl(0, 0%, 52%);
 }
 
 /* Intro paragraphs need breathing room; research.css sets none. */
@@ -375,28 +285,6 @@
   margin-top: 14px;
 }
 
-.honor-tag,
-.venue-tag {
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: hsl(45, 100%, 72%);
-  border: 1px solid hsl(45, 100%, 72%, 0.45);
-  border-radius: 4px;
-  padding: 2px 6px;
-  flex-shrink: 0;
-}
-
-/* Where each paper was accepted */
-.venue-line {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
-  font-size: 13.5px;
-}
 
 /* Skills */
 .skill-groups {
@@ -411,7 +299,7 @@
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: hsl(45, 100%, 72%);
+  color: var(--vegas-gold);
   margin-bottom: 10px;
 }
 
@@ -431,7 +319,4 @@
   font-weight: 500;
 }
 
-@media (max-width: 580px) {
-  .venue-line { gap: 6px; }
-}
 </style>

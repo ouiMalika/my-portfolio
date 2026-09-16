@@ -653,7 +653,7 @@ const marathonRepo = 'https://github.com/ouiMalika/marathon-dashboard'
   font-size: 13px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: hsl(45, 100%, 72%);
+  color: var(--vegas-gold);
   margin-bottom: 10px;
 }
 
