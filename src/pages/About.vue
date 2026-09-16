@@ -18,7 +18,7 @@
             advised by
             <a href="https://engineering.lehigh.edu/faculty/cristian-ioan-vasile" target="_blank" rel="noopener" class="inline-link">Prof. Cristian-Ioan Vasile</a>
             and
-            <a href="https://compsci.colostate.edu/person/?id=22819F3798B5E0C9C0D4C0AE0FCC3E98&amp;sq=t" target="_blank" rel="noopener" class="inline-link">Prof. Aparna Bharati</a>.
+            <a href="https://www.aparnabharati.com/" target="_blank" rel="noopener" class="inline-link">Prof. Aparna Bharati</a>.
             My work is on vision–language models used for driving and embodied agents: how to tell
             what these models actually know, and what a system should do when they are not sure.
           </p>
@@ -288,14 +288,14 @@
 /* Intro sits beside the photo on wide screens and stacks underneath on narrow. */
 .intro-row {
   display: grid;
-  grid-template-columns: minmax(0, 2.4fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 2.8fr) minmax(0, 1fr);
   gap: 30px;
   align-items: start;
 }
 
 .intro-photo {
   margin: 0;
-  max-width: 300px;
+  max-width: 260px;
   justify-self: end;
 }
 
