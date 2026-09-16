@@ -5,29 +5,42 @@
     </header>
 
     <section class="about-text">
-      <p>
-        I’m Malika, an international student from Almaty, Kazakhstan — the city of mountains
-        and apples. I study Computer Science &amp; Engineering and Product Design at Lehigh
-        University, graduating in May 2027.
-      </p>
-      <p>
-        I do research in Lehigh’s
-        <a href="https://idisc.lehigh.edu/research/autonomy-intelligent-robotics-lab-air-lab" target="_blank" rel="noopener" class="inline-link">Autonomy &amp; Intelligent Robotics Lab</a>,
-        advised by
-        <a href="https://engineering.lehigh.edu/faculty/cristian-ioan-vasile" target="_blank" rel="noopener" class="inline-link">Prof. Cristian-Ioan Vasile</a>
-        and
-        <a href="https://engineering.lehigh.edu/faculty/aparna-bharati" target="_blank" rel="noopener" class="inline-link">Prof. Aparna Bharati</a>.
-        My work is on vision–language models used for driving and embodied agents: how to tell
-        what these models actually know, and what a system should do when they are not sure.
-      </p>
-      <p>
-        Alongside research I build data infrastructure and full-stack systems. Outside of it,
-        I dance and make visual art.
-      </p>
+      <div class="intro-row">
+        <div class="intro-copy">
+          <p>
+            I’m Malika, an international student from Almaty, Kazakhstan — the city of mountains
+            and apples. I study Computer Science &amp; Engineering and Product Design at Lehigh
+            University, graduating in May 2027.
+          </p>
+          <p>
+            I do research in Lehigh’s
+            <a href="https://idisc.lehigh.edu/research/autonomy-intelligent-robotics-lab-air-lab" target="_blank" rel="noopener" class="inline-link">Autonomy &amp; Intelligent Robotics Lab</a>,
+            advised by
+            <a href="https://engineering.lehigh.edu/faculty/cristian-ioan-vasile" target="_blank" rel="noopener" class="inline-link">Prof. Cristian-Ioan Vasile</a>
+            and
+            <a href="https://engineering.lehigh.edu/faculty/aparna-bharati" target="_blank" rel="noopener" class="inline-link">Prof. Aparna Bharati</a>.
+            My work is on vision–language models used for driving and embodied agents: how to tell
+            what these models actually know, and what a system should do when they are not sure.
+          </p>
+          <p>
+            Alongside research I build data infrastructure and full-stack systems. Outside of it,
+            I dance, make visual art, and hike.
+          </p>
 
-      <p class="honors-line">
-        Lehigh Future Maker Award · Trustees’ Scholarship · IEEE GHTC 2023 Best Student Presentation
-      </p>
+          <p class="honors-line">
+            Lehigh Future Maker Award · Trustees’ Scholarship · IEEE GHTC 2023 Best Student Presentation
+          </p>
+        </div>
+
+        <figure class="intro-photo">
+          <img
+            src="/images/almaty.jpg"
+            alt="Malika in the mountains above Almaty, Kazakhstan, with the gondola line behind her"
+            loading="lazy"
+          />
+          <figcaption>Above Almaty, December 2025.</figcaption>
+        </figure>
+      </div>
     </section>
 
    <!-- EDUCATION -->
@@ -272,6 +285,44 @@
 
 <style src="../assets/research.css"></style>
 <style scoped>
+/* Intro sits beside the photo on wide screens and stacks underneath on narrow. */
+.intro-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.intro-photo {
+  margin: 0;
+  max-width: 380px;
+  justify-self: end;
+}
+
+.intro-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: var(--shadow-3);
+  display: block;
+}
+
+.intro-photo figcaption {
+  margin-top: 8px;
+  font-size: 12.5px;
+  color: hsl(0, 0%, 52%);
+}
+
+@media (max-width: 840px) {
+  .intro-row {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-photo {
+    max-width: 320px;
+  }
+}
+
 /* Awards sit under the intro as one quiet line, not as pills — they should
    register on a second read, not compete with the first paragraph. */
 .honors-line {
