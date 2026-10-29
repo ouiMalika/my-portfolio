@@ -24,7 +24,10 @@
 
       <div v-if="s.media || s.embed" class="media" :class="`media--${s.layout || 'grid2'}`">
         <figure v-for="m in s.media || []" :key="m.src" class="media__item">
-          <button type="button" class="media__btn" @click="open(m.src, m.alt)" :aria-label="`Enlarge: ${m.alt}`">
+          <div v-if="m.src.endsWith('.mp4')" class="media__btn media__btn--video">
+            <video :src="m.src" :aria-label="m.alt" autoplay muted loop playsinline preload="metadata" />
+          </div>
+          <button v-else type="button" class="media__btn" @click="open(m.src, m.alt)" :aria-label="`Enlarge: ${m.alt}`">
             <img :src="m.src" :alt="m.alt" loading="lazy" />
           </button>
           <figcaption v-if="m.caption">{{ m.caption }}</figcaption>

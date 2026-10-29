@@ -241,7 +241,9 @@ h1, h2, h3 { line-height: 1.25; margin: 0; font-weight: 600; letter-spacing: -0.
   background: #fff;
   cursor: zoom-in;
 }
-.media__btn img { width: 100%; height: auto; }
+.media__btn img,
+.media__btn video { width: 100%; height: auto; display: block; }
+.media__btn--video { cursor: default; background: #000; }
 .media--phones .media__btn { border-radius: 18px; }
 .media__item figcaption { font-size: 13px; color: var(--faint); margin-top: 6px; }
 

@@ -37,27 +37,45 @@ export const research: Project[] = [
     slug: 'calm',
     title: 'CALM',
     meta: 'AIR Lab · 2026',
-    cover: '/images/research/calm/frontier.jpg',
+    cover: '/images/research/calm/scenario.jpg',
     coverFit: 'contain',
     blurb: 'Calibrated perception for risk-aware action selection in urban driving.',
     intro:
       '<strong>Calibrated Vision–Language Perception for Risk-Aware Action Selection in Urban Driving.</strong> A planning pipeline that treats a vision–language model as a component that is sometimes confident and wrong. Its reading of a traffic sign is carried forward as a calibrated belief, so the action taken can be traced back to what was known and how well it was known.',
     sections: [
       {
-        heading: 'Pipeline',
-        text: 'Detected signs from nuScenes are read by open vision–language models. Conformal calibration turns raw confidence into a belief over five longitudinal actions, and a mixed-integer program commits one action per event under an explicit cost. Evaluation is open-loop, with the catastrophic-miss rate on required hard-brake events as the primary measure.',
-        media: [img('/images/research/calm/pipeline.jpg', 'CALM pipeline from detection to action selection')],
+        heading: 'One event, end to end',
+        text: 'A car approaching a red light with a two-second horizon. GroundingDINO finds the light, an open vision–language model reads three padded crops, the readings are calibrated into a distribution over five longitudinal actions, and the planner commits one. The predicted speed change is compared with what the human driver did.',
+        media: [img('/images/research/calm/scenario.jpg', 'Scene 0017: detection, VLM reading, calibration and planning for one red-light event')],
         layout: 'wide',
+      },
+      {
+        heading: 'Perception on nuScenes',
+        text: 'Sign and signal detection and tracking on nuScenes scenes, the input to the reading and calibration stages.',
+        media: [img('/images/research/calm/nuscenes-annotated.mp4', 'Annotated nuScenes drive with detected signs')],
+        layout: 'wide',
+      },
+      {
+        heading: 'Pipeline',
+        text: 'Detection, VLM reading, calibration with logistic regression and split-conformal sets, a per-class action library, and a MILP planner with a cost matrix, CVaR and distributionally robust layers. Evaluation is open-loop, with the catastrophic-miss rate on required hard-brake events as the primary measure.',
+        media: [
+          img('/images/research/calm/pipeline-steps.jpg', 'Pipeline stages from detection to the committed action'),
+          img('/images/research/calm/belief.jpg', 'Calibrated belief over the five actions for a hard-brake event'),
+        ],
+        layout: 'grid2',
       },
       {
         heading: 'Objectives',
-        text: 'With the belief held fixed, the planner compares L1, asymmetric consequence, CVaR and distributionally robust objectives. The frontier below trades catastrophic misses against false stops.',
-        media: [img('/images/research/calm/frontier.jpg', 'Catastrophic-miss rate against false-stop rate for each planner')],
-        layout: 'wide',
+        text: 'With the belief held fixed, the planner compares L1, asymmetric consequence, CVaR and distributionally robust objectives, trading catastrophic misses against false stops.',
+        media: [
+          img('/images/research/calm/frontier.jpg', 'Catastrophic-miss rate against false-stop rate for each planner'),
+          img('/images/research/calm/cost-sweep.jpg', 'Catastrophic misses under each cost, at three units of analysis'),
+        ],
+        layout: 'grid2',
       },
       {
         heading: 'Venues',
-        text: 'IROS 2026 Workshop on Bridging Learning, Planning, and Control; IROS 2026 Workshop on Rethinking Uncertainty, Pittsburgh; Northeast Robotics Colloquium 2026, Princeton.<br>With Qiuyu Tang, Kaier Liang, Aparna Bharati and Cristian-Ioan Vasile.',
+        text: 'IROS 2026, Pittsburgh: <a href="https://sites.google.com/bu.edu/hybridarchforautonomy" target="_blank" rel="noopener">Workshop on Bridging Learning, Planning, and Control (BLPC)</a> and <a href="https://rethinking-uncertainty.github.io/" target="_blank" rel="noopener">Workshop on Rethinking Uncertainty</a>, September 2026. <a href="https://nerc2026.github.io/" target="_blank" rel="noopener">Northeast Robotics Colloquium (NERC 2026)</a>, Princeton, October 2026.<br>With Qiuyu Tang, Kaier Liang, Aparna Bharati and Cristian-Ioan Vasile.',
       },
     ],
   },
@@ -65,7 +83,7 @@ export const research: Project[] = [
     slug: 'better-read-than-said',
     title: 'Better Read Than Said',
     meta: 'AIR Lab · 2026',
-    cover: '/images/research/brts/ladder.jpg',
+    cover: '/images/research/brts/maze.png',
     coverFit: 'contain',
     blurb: 'Locating spatial-planning failure at the output interface of vision–language models.',
     intro:
@@ -75,10 +93,11 @@ export const research: Project[] = [
         heading: 'Setup',
         text: 'From one forward pass under one prompt, five ways of getting a next move out of the same frozen hidden state are compared: two that read what the model writes, and three that fit a classifier on its activations. Six open models across three families.',
         media: [
+          img('/images/research/brts/maze.png', 'A maze from the benchmark'),
           img('/images/research/brts/task.jpg', 'Maze levels and transition rules'),
           img('/images/research/brts/design.jpg', 'Five readout methods from one shared context'),
         ],
-        layout: 'grid2',
+        layout: 'grid3',
       },
       {
         heading: 'Result',
@@ -92,7 +111,7 @@ export const research: Project[] = [
       },
       {
         heading: 'Venues',
-        text: 'NeurIPS 2026 Workshop on Vision Language Models: Challenges of Real World Deployment (VLM4RWD), Sydney. A companion paper, <em>Decoded and Generated Actions in Vision–Language Spatial Planning</em>, appeared at the IROS 2026 Workshop on Rethinking Uncertainty.<br>With Qiuyu Tang, Cristian-Ioan Vasile and Aparna Bharati.',
+        text: '<a href="https://vlm4rwd.github.io/" target="_blank" rel="noopener">NeurIPS 2026 Workshop on Vision Language Models: Challenges of Real World Deployment (VLM4RWD)</a>, Sydney, December 2026. A companion paper, <em>Decoded and Generated Actions in Vision–Language Spatial Planning</em>, was presented at the <a href="https://rethinking-uncertainty.github.io/" target="_blank" rel="noopener">IROS 2026 Workshop on Rethinking Uncertainty</a>, Pittsburgh.<br>With Qiuyu Tang, Cristian-Ioan Vasile and Aparna Bharati.',
       },
     ],
   },
@@ -147,7 +166,7 @@ export const research: Project[] = [
       },
       {
         heading: 'Shown at',
-        text: '15th Annual oSTEM Conference, Baltimore, October 2025 · Voxel Baltimore, May 2025 · Lehigh Summer Research Expo, August 2024.',
+        text: '<a href="https://conference.ostem.org/2025" target="_blank" rel="noopener">15th Annual oSTEM Conference</a>, Baltimore, October 2025 · <a href="https://voxel.org/events/dance-floor-hospital-room-kitchen-table" target="_blank" rel="noopener">Voxel Baltimore</a>, May 2025 · <a href="https://news.lehigh.edu/lehigh-summer-research-expo-showcases-students-innovative-projects" target="_blank" rel="noopener">Lehigh Summer Research Expo</a>, August 2024.',
       },
     ],
   },
@@ -159,7 +178,7 @@ export const research: Project[] = [
     coverFit: 'contain',
     blurb: 'A sustainability-education app for students and teachers in Kazakhstan.',
     intro:
-      '<a href="https://savetuba.com" target="_blank" rel="noopener">Save Tuba</a> is a student mobile app and a teacher web app for environmental education in Kazakhstan. It was piloted with more than 500 students and teachers, and its interface and curriculum were revised from teacher feedback.',
+      '<a href="https://savetuba.com" target="_blank" rel="noopener">Save Tuba</a> is a student mobile app and a teacher web app for environmental education in Kazakhstan. It was piloted with more than 500 students and teachers, and its interface and curriculum were revised from teacher feedback. Fieldwork took place in Almaty in May 2023 and May 2024 with <a href="https://almau.edu.kz/" target="_blank" rel="noopener">AlmaU</a> and <a href="https://www.kaznpu.kz/en/" target="_blank" rel="noopener">Abai Kazakh National Pedagogical University</a>.',
     sections: [
       {
         text: 'As a Fellow I worked on the seven-member development team, prototyped the teacher-facing front end, improved the Kazakh and Russian translations, and expanded the question bank in natural-science content. The app is on <a href="https://play.google.com/store/apps/details?id=com.jameschang.SaveTuba&hl=en_US" target="_blank" rel="noopener">Google Play</a>.',
@@ -172,7 +191,7 @@ export const research: Project[] = [
       },
       {
         heading: 'Publication',
-        text: 'Gavade, Bronson, Leaventon, Tuleubayev, Ossinger, Buribayeva, Jalal, Mehta. <a href="https://ieeexplore.ieee.org/document/10354628" target="_blank" rel="noopener">How Teacher Feedback Helped Reimagine, Redesign, and Recode a Sustainability Education App</a>. IEEE GHTC 2023. Best Student Presentation Award.',
+        text: 'Gavade, Bronson, Leaventon, Tuleubayev, Ossinger, Buribayeva, Jalal, Mehta. <a href="https://ieeexplore.ieee.org/document/10354628" target="_blank" rel="noopener">How Teacher Feedback Helped Reimagine, Redesign, and Recode a Sustainability Education App</a>. <a href="https://technologyandsociety.org/13th-ieee-global-humanitarian-technology-conference-ghtc-2023/" target="_blank" rel="noopener">IEEE GHTC 2023</a>, Villanova. Best Student Presentation Award.',
       },
     ],
   },
@@ -361,7 +380,7 @@ export const tech: Project[] = [
     slug: 'moodboard',
     title: 'Moodboard',
     meta: 'Personal project · 2025',
-    cover: '',
+    cover: '/images/tech/moodboard.jpg',
     blurb: 'Groups uploaded visual references into themed boards with CLIP embeddings and clustering.',
     intro:
       'Upload a set of images and get them back grouped into themed boards. Each image is embedded with CLIP and grouped with K-Means; processing runs in Celery workers backed by Redis so large batches do not block the interface.',
