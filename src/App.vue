@@ -1,14 +1,14 @@
 <template>
-  <main class="main">
-    <Sidebar />
-    <div class="main-content">
-      <Navbar />
-      <RouterView />
-    </div>
+  <SiteHeader />
+  <main class="page">
+    <RouterView />
   </main>
+  <footer class="site-footer">
+    <span>© {{ year }} Malika Buribayeva</span>
+  </footer>
 </template>
 
 <script setup lang="ts">
-import Sidebar from './components/Sidebar.vue'
-import Navbar from './components/Navbar.vue'
+import SiteHeader from './components/SiteHeader.vue'
+const year = new Date().getFullYear()
 </script>

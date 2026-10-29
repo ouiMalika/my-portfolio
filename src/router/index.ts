@@ -1,28 +1,26 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import About from '../pages/About.vue'
-import Research from '../pages/Research.vue'
-import TechProjects from '../pages/TechProjects.vue'
-import DesignProjects from '../pages/DesignProjects.vue'
+import Home from '../pages/Home.vue'
+import Collection from '../pages/Collection.vue'
 
 const routes = [
-  { path: '/', component: About },
-  { path: '/research', component: Research },
-  { path: '/tech-projects', component: TechProjects },
-  { path: '/design-projects', component: DesignProjects },
+  { path: '/', component: Home },
+  { path: '/research/:slug?', component: Collection, props: (r: any) => ({ kind: 'research', slug: r.params.slug }) },
+  { path: '/tech/:slug?', component: Collection, props: (r: any) => ({ kind: 'tech', slug: r.params.slug }) },
+  { path: '/design/:slug?', component: Collection, props: (r: any) => ({ kind: 'design', slug: r.params.slug }) },
+  // Old paths, kept so existing links still land somewhere sensible.
+  { path: '/tech-projects', redirect: '/tech' },
+  { path: '/design-projects', redirect: '/design' },
+  { path: '/:pathMatch(.*)*', redirect: '/' },
 ]
 
 export default createRouter({
   history: createWebHistory(),
   routes,
-  // Without this, links like /tech-projects#marathon-pipeline land at the top
-  // of the page. The delay lets the incoming view render before we scroll to
-  // the target, since sections are inside the routed component.
-  scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) return savedPosition
-    if (to.hash) {
-      return new Promise((resolve) => {
-        setTimeout(() => resolve({ el: to.hash, behavior: 'smooth', top: 20 }), 120)
-      })
+  scrollBehavior(to, from, saved) {
+    if (saved) return saved
+    // Opening or closing a project inside the same page keeps the reader near the grid.
+    if (to.path.split('/')[1] === from.path.split('/')[1] && to.path !== '/') {
+      return { el: '#collection-top', top: 72 }
     }
     return { top: 0 }
   },
