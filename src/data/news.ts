@@ -17,7 +17,11 @@ export const news: NewsItem[] = [
   },
   {
     date: 'Sep 2026',
-    html: `Presented at two IROS 2026 workshops in Pittsburgh: <em>CALM</em> at ${a('https://sites.google.com/bu.edu/hybridarchforautonomy', 'Bridging Learning, Planning, and Control (BLPC)')}, and <em>CALM</em> and <em>Decoded and Generated Actions in Vision–Language Spatial Planning</em> at ${a('https://rethinking-uncertainty.github.io/', 'Rethinking Uncertainty')}.`,
+    html: `Presented <em>CALM</em> at two IROS 2026 workshops in Pittsburgh: ${a('https://sites.google.com/bu.edu/hybridarchforautonomy', 'Bridging Learning, Planning, and Control (BLPC)')} and ${a('https://rethinking-uncertainty.github.io/', 'Rethinking Uncertainty')}.`,
+  },
+  {
+    date: 'Sep 2026',
+    html: `Presented <em>Decoded and Generated Actions in Vision–Language Spatial Planning</em> at the IROS 2026 ${a('https://rethinking-uncertainty.github.io/', 'Workshop on Rethinking Uncertainty')}, Pittsburgh.`,
   },
   {
     date: 'Aug 2026',
