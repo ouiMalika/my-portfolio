@@ -458,7 +458,7 @@ export const design: Project[] = [
         layout: 'grid2',
       },
       {
-        heading: 'Daycare',
+        heading: 'From study to daycare',
         media: [
           img(`${D}/eames-daycare/daycare-grid-concept.jpg`, 'Grid concept'),
           img(`${D}/eames-daycare/daycare-grid-elements.jpg`, 'Usable grid elements'),
@@ -467,6 +467,7 @@ export const design: Project[] = [
         layout: 'grid3',
       },
       {
+        heading: 'Daycare',
         media: [
           img(`${D}/eames-daycare/daycare-plan-elevation.jpg`, 'Daycare plan and elevation'),
           img(`${D}/eames-daycare/daycare-interior.jpg`, 'Daycare interior'),
