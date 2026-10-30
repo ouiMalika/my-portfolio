@@ -794,8 +794,8 @@ export const design: Project[] = [
     title: 'Drawing',
     meta: 'ART 011 · Fall 2025',
     cover: `${D}/drawing/folds.jpg`,
-    blurb: 'Figure, still life, folds and a jungle diorama, drawn and built.',
-    intro: 'Work from a semester of drawing: figure studies, a still life, drapery folds, and a jungle diorama that was built and then drawn.',
+    blurb: 'Drapery folds, a still life, and a jungle diorama, built and then drawn.',
+    intro: 'Work from a semester of drawing: drapery folds, a still life, and a jungle diorama that was built and then drawn.',
     sections: [
       {
         media: [
@@ -807,18 +807,9 @@ export const design: Project[] = [
       {
         media: [
           img(`${D}/drawing/diorama-1.jpg`, 'Jungle diorama'),
-          img(`${D}/drawing/diorama-2.jpg`, 'Jungle diorama'),
           img(`${D}/drawing/diorama-drawing.jpg`, 'Drawing of the diorama'),
         ],
-        layout: 'grid3',
-      },
-      {
-        media: [
-          img(`${D}/drawing/figure-1.jpg`, 'Figure study'),
-          img(`${D}/drawing/figure-2.jpg`, 'Figure study'),
-          img(`${D}/drawing/figure-3.jpg`, 'Figure study'),
-        ],
-        layout: 'grid3',
+        layout: 'grid2',
       },
     ],
   },
