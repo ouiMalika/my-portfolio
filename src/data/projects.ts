@@ -616,30 +616,61 @@ export const design: Project[] = [
     meta: 'Multi-sensory design · Fall 2026',
     status: 'In progress',
     cover: `${D}/tacti/device.jpg`,
-    blurb: 'A clip-on device and app that guide a shopper to an item through vibration cues.',
+    blurb: 'A device on the back of the phone that guides a shopper to an item with left and right vibration cues.',
     intro:
-      'Tacti clips to the back of a phone and guides a shopper through the store with left and right vibration cues, with voice guidance as an option. It also signals when an item is unavailable. The work spans the enclosure, the cue vocabulary, firmware for a two-motor prototype and the app.',
+      'Tacti clips to the back of a phone and guides a shopper through the store. The app estimates position from the compass and walking steps, and the device turns each instruction into pulses on a left or right motor. Without the device, the phone vibrates instead. The work spans the enclosure, the cue vocabulary, firmware for a two-motor prototype and the app.',
     sections: [
       {
-        media: [img(`${D}/tacti/device.jpg`, 'Tacti enclosure')],
+        media: [
+          img(`${D}/tacti/device.jpg`, 'Tacti enclosure'),
+          img(`${D}/tacti/v3/hero.jpg`, 'Tacti, app render'),
+        ],
+        layout: 'grid2',
+      },
+      {
+        heading: 'System',
+        media: [img(`${D}/tacti/v3/system.svg`, 'Compass and steps give a position on the aisle map; guidance sends cues over Wi-Fi to the ESP32-S3, which drives the left and right motors through a DRV8833')],
         layout: 'wide',
+      },
+      {
+        heading: 'Flow',
+        media: [
+          img(`${D}/tacti/v3/setup.gif`, 'Sign in, pair, learn the vibrations'),
+          img(`${D}/tacti/v3/browse.gif`, 'Choose a store, browse, open a product'),
+          img(`${D}/tacti/v3/walk.gif`, 'Walk: start, turn left, closing in, found it, in basket'),
+        ],
+        layout: 'grid3',
       },
       {
         heading: 'Setup',
         media: [
-          img(`${D}/tacti/screen-pair.png`, 'Pair your Tacti'),
-          img(`${D}/tacti/screen-connected.png`, 'Tacti connected'),
-          img(`${D}/tacti/screen-you.png`, 'Vibration output and settings'),
+          img(`${D}/tacti/v3/01-sign-in.png`, 'Sign in'),
+          img(`${D}/tacti/v3/02-pair.png`, 'Pair your Tacti'),
+          img(`${D}/tacti/v3/02b-paired.png`, 'Tacti is paired'),
+          img(`${D}/tacti/v3/12-learn.png`, 'Learn the vibrations'),
         ],
         layout: 'phones',
       },
       {
-        heading: 'Shopping',
+        heading: 'Shop',
         media: [
-          img(`${D}/tacti/screen-find.png`, 'Find items'),
-          img(`${D}/tacti/screen-list.png`, 'Shopping list'),
-          img(`${D}/tacti/screen-walk-turn.png`, 'Turn right, two short pulses on the right motor'),
-          img(`${D}/tacti/screen-walk-arrived.png`, 'Arrived, two long pulses on both motors'),
+          img(`${D}/tacti/v3/03-store.png`, 'Choose your store'),
+          img(`${D}/tacti/v3/05-shop.png`, 'Shop with a list'),
+          img(`${D}/tacti/v3/06-dairy.png`, 'Department'),
+          img(`${D}/tacti/v3/07-product.png`, 'Product, aisle and shelf'),
+        ],
+        layout: 'phones',
+      },
+      {
+        heading: 'Walk',
+        media: [
+          img(`${D}/tacti/v3/08-walk-start.png`, 'Start at the entrance'),
+          img(`${D}/tacti/v3/08b-turn-left.png`, 'Turn left, two short pulses on the left motor'),
+          img(`${D}/tacti/v3/08c-closing.png`, 'Closing in, taps get quicker'),
+          img(`${D}/tacti/v3/08d-found.png`, 'Found it'),
+          img(`${D}/tacti/v3/08e-basket.png`, 'In your basket'),
+          img(`${D}/tacti/v3/10-list.png`, 'List and basket'),
+          img(`${D}/tacti/v3/11-you.png`, 'You'),
         ],
         layout: 'phones',
       },
@@ -653,31 +684,51 @@ export const design: Project[] = [
     cover: `${D}/hiking/tiles.jpg`,
     blurb: 'A trail map, tour booking and gear rental app for new hikers and visitors to Almaty.',
     intro:
-      'A mobile interface for new hikers, visitors to Almaty and families: find a trail on an illustrated map of the mountains around the city, book a tour, rent the gear for it, and collect stamps for the routes completed.',
+      'A mobile interface for new hikers, visitors to Almaty and families: find a trail on an illustrated panorama of the mountains around the city, book a tour, rent the gear for it, add transport and food, and collect a stamp for every valley walked.',
     sections: [
       {
         media: [img(`${D}/hiking/in-hand.jpg`, 'Hiking Market at Big Almaty Lake')],
         layout: 'wide',
       },
       {
-        heading: 'Screens',
+        heading: 'Find a route',
         media: [
-          img(`${D}/hiking/screen-1.png`, 'Trail map'),
-          img(`${D}/hiking/screen-2.png`, 'Explore'),
-          img(`${D}/hiking/screen-3.png`, 'Destinations'),
-          img(`${D}/hiking/screen-4.png`, 'Region'),
-          img(`${D}/hiking/screen-5.png`, 'Trail detail'),
-          img(`${D}/hiking/screen-6.png`, 'Gear'),
-          img(`${D}/hiking/screen-7.png`, 'Gear detail'),
-          img(`${D}/hiking/screen-8.png`, 'Tour detail'),
-          img(`${D}/hiking/screen-9.png`, 'Order'),
-          img(`${D}/hiking/screen-10.png`, 'Stamp collection'),
-          img(`${D}/hiking/screen-11.png`, 'Profile'),
+          img(`${D}/hiking/v2/01-home.jpg`, 'Panorama map'),
+          img(`${D}/hiking/v2/02-feed.jpg`, 'Explore'),
+          img(`${D}/hiking/v2/03-destination.jpg`, 'Destination, Medeu'),
+          img(`${D}/hiking/v2/04-tour.jpg`, 'Tour, Gorelnik Waterfalls'),
         ],
         layout: 'phones',
       },
       {
-        media: [img(`${D}/hiking/mockup.jpg`, 'Three screens')],
+        heading: 'Gear, add-ons and transport',
+        media: [
+          img(`${D}/hiking/v2/05-gear.jpg`, 'Gear rental'),
+          img(`${D}/hiking/v2/06-gear-detail.jpg`, 'Gear detail'),
+          img(`${D}/hiking/v2/07-addons.jpg`, 'Add-ons'),
+          img(`${D}/hiking/v2/08-transport.jpg`, 'Transport'),
+        ],
+        layout: 'phones',
+      },
+      {
+        heading: 'Trip and stamps',
+        media: [
+          img(`${D}/hiking/v2/10-cart.jpg`, 'Your trip'),
+          img(`${D}/hiking/v2/09-stamps.jpg`, 'Stamps'),
+          img(`${D}/hiking/v2/11-profile.jpg`, 'Profile'),
+          img(`${D}/hiking/v2/12-menu.jpg`, 'Menu'),
+        ],
+        layout: 'phones',
+      },
+      {
+        media: [
+          img(`${D}/hiking/flatlay.jpg`, 'Hiking Market among hiking gear'),
+          img(`${D}/hiking/mockup.jpg`, 'Three screens'),
+        ],
+        layout: 'grid2',
+      },
+      {
+        media: [img(`${D}/hiking/tiles.jpg`, 'Screens')],
         layout: 'wide',
       },
     ],
