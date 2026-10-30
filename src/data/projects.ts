@@ -120,8 +120,7 @@ export const research: Project[] = [
     title: 'Taste Topology',
     meta: 'Honors project · Art, Architecture and Design · 2026',
     status: 'In progress',
-    cover: '/images/research/taste/panels.jpg',
-    coverFit: 'contain',
+    cover: '/images/research/taste/cover.jpg',
     blurb: 'Whether aesthetic preference for a digital composition holds when the same design becomes a physical relief.',
     intro:
       'An undergraduate honors project advised by Prof. Eugene Han. It asks whether preferences for abstract digital compositions are stable when the same designs are realized as physical reliefs, using one parametric stimulus grammar for both media.',
