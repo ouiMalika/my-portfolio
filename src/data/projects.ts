@@ -140,7 +140,7 @@ export const research: Project[] = [
           img('/images/research/taste/digital.gif', 'Choosing between digital drawings and moving to the next pair'),
           img('/images/research/taste/physical.gif', 'Transition to the physical comparison and recording choices'),
         ],
-        layout: 'grid3',
+        layout: 'wide',
       },
       {
         heading: 'Installation',
@@ -566,9 +566,6 @@ export const design: Project[] = [
       {
         heading: 'Proposed materials',
         text: 'Main board: ½-inch natural plywood, 62 × 26 inches. Frames: ¼-inch poplar rails. Relief backing: twelve gray-painted ¼-inch MDF squares. Reliefs: twelve 190 × 190 mm PLA prints, using four designs. Covers: 3/16-inch foam board with flexible polypropylene hinges and lid supports. The main wooden structure stays natural; gray is reserved for the relief backing.',
-      },
-    ],
-        layout: 'grid2',
       },
     ],
   },
