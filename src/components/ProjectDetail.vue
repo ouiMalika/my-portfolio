@@ -22,7 +22,7 @@
 
       <p v-if="s.text" class="block__text" v-html="s.text" />
 
-      <div v-if="s.media || s.embed" class="media" :class="`media--${s.layout || 'grid2'}`">
+      <div v-if="s.media || s.embed" class="media" :class="[`media--${s.layout || 'grid2'}`, { 'media--equal': s.equalMedia }]">
         <figure v-for="m in s.media || []" :key="m.src" class="media__item">
           <div v-if="m.src.endsWith('.mp4')" class="media__btn media__btn--video">
             <video :src="m.src" :aria-label="m.alt" autoplay muted loop playsinline preload="metadata" />

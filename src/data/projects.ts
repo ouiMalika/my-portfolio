@@ -9,6 +9,7 @@ export interface Section {
   text?: string
   media?: Media[]
   layout?: 'wide' | 'grid2' | 'grid3' | 'strip' | 'phones'
+  equalMedia?: boolean
   metrics?: { value: string; label: string }[]
   embed?: { src: string; title: string; ratio?: string }
   links?: { label: string; href: string }[]
@@ -120,7 +121,7 @@ export const research: Project[] = [
     title: 'Taste Topology',
     meta: 'Honors project · Art, Architecture and Design · 2026',
     status: 'In progress',
-    cover: '/images/research/taste/cover.jpg',
+    cover: '/images/research/taste/cad/four-designs.png',
     blurb: 'Whether aesthetic preference for a digital composition holds when the same design becomes a physical relief.',
     intro:
       'An undergraduate honors project advised by Prof. Eugene Han. It asks whether preferences for abstract digital compositions are stable when the same designs are realized as physical reliefs, using one parametric stimulus grammar for both media.',
@@ -128,22 +129,35 @@ export const research: Project[] = [
       {
         heading: 'Stimuli',
         text: 'Four designs come from one deterministic function: six paths, four cycles, 10 mm amplitude, identical bounds and line width. A and B use even spacing, C and D two groups of three; A and C are smooth, B and D angular. The same metric geometry drives the drawings and the CAD reliefs.',
-        media: [
-          img('/images/research/taste/panels.jpg', 'Four flat-top relief panels A to D'),
-          img('/images/research/taste/relief-a.jpg', 'Relief A, CAD render'),
-        ],
-        layout: 'grid2',
+        media: [img('/images/research/taste/cad/four-designs.png', 'The four 190 mm relief designs, rendered from the print geometry')],
+        layout: 'wide',
       },
       {
         heading: 'Study interface',
         text: 'A library installation guides each visitor through six drawing pairs and then the same six pairs as physical panels. Responses, timing and background are stored locally with no names or contact details.',
         media: [
-          img('/images/research/taste/start.jpg', 'Start screen'),
-          img('/images/research/taste/comparison.jpg', 'Drawing comparison'),
-          img('/images/research/taste/physical.jpg', 'Physical pair instructions'),
+          img('/images/research/taste/intro.gif', 'Study welcome, consent and background screens'),
+          img('/images/research/taste/digital.gif', 'Choosing between digital drawings and moving to the next pair'),
+          img('/images/research/taste/physical.gif', 'Transition to the physical comparison and recording choices'),
         ],
         layout: 'grid3',
       },
+      {
+        heading: 'Installation',
+        text: 'Six covered pairs bring the drawings into a tactile study. The board is designed to lean against a wall on a desk, with a restrained bottom edge. CAD development is ongoing; hinge supports and mounting details will be tested in a physical prototype.',
+        media: [img('/images/research/taste/cad/assembly.png', 'Full six-pair study board with the lids open')],
+        layout: 'wide',
+      },
+      {
+        heading: 'Assembly',
+        media: [img('/images/research/taste/cad/exploded.png', 'Exploded board, frames, backing squares, printed reliefs and covers')],
+        layout: 'wide',
+      },
+      {
+        heading: 'Proposed materials',
+        text: 'Main board: ½-inch natural plywood, 62 × 26 inches. Frames: ¼-inch poplar rails. Relief backing: twelve gray-painted ¼-inch MDF squares. Reliefs: twelve 190 × 190 mm PLA prints, using four designs. Covers: 3/16-inch foam board with flexible polypropylene hinges and lid supports. The main wooden structure stays natural; gray is reserved for the relief backing.',
+      },
+
     ],
   },
   {
@@ -416,6 +430,40 @@ const D = '/images/design'
 
 export const design: Project[] = [
   {
+    slug: 'voice-directed-story-worlds',
+    group: 'Product and interaction',
+    title: 'Voice Directed Story Worlds',
+    meta: 'Project 3 · Concept development · 2026',
+    status: 'In development',
+    cover: `${D}/story-worlds/projection.png`,
+    blurb: 'A parent and child build an imagined world together through spoken storytelling.',
+    intro: 'A speculative home-entertainment concept for 2035. A child narrates a story and the surrounding world responds, while a parent can approve, change, pause or undo additions. The project is currently in research and concept development.',
+    sections: [
+      {
+        heading: 'A shared story room',
+        text: 'One direction projects the story into the room, keeping the parent and child in a shared space. A forest can become an underwater world as the story changes.',
+        media: [img(`${D}/story-worlds/projection.png`, 'Projection-room concept from the project brief')],
+        layout: 'wide',
+      },
+      {
+        heading: 'An alternative in VR',
+        text: 'A second direction gives the child an immersive headset while the parent follows and directs the story through a companion screen. Both directions explore how parent and child retain agency over generated content.',
+        media: [img(`${D}/story-worlds/vr.png`, 'VR concept with a parent companion interface')],
+        layout: 'wide',
+      },
+      {
+        heading: 'Interaction in development',
+        text: 'The initial flow moves from listening, to parent approval, to an updated story world. A planned one-minute prototype will use prepared scenes to demonstrate these transitions; live world generation has not been implemented.',
+        media: [img(`${D}/story-worlds/wireframe.png`, 'Early listening, approval and story-update wireframes')],
+        layout: 'wide',
+      },
+      {
+        heading: 'Next steps',
+        text: 'Develop the parent controls, storyboard the forest-to-ocean sequence and test whether the approval moments support a shared storytelling experience.',
+      },
+    ],
+  },
+  {
     slug: 'eames-house-daycare',
     group: 'Architecture',
     title: 'Eames House to Daycare',
@@ -434,6 +482,7 @@ export const design: Project[] = [
           img(`${D}/eames-daycare/eames-section-imaginary.jpg`, 'Section, nature taking over'),
         ],
         layout: 'grid2',
+        equalMedia: true,
       },
       {
         heading: 'Study',
@@ -446,6 +495,7 @@ export const design: Project[] = [
           img(`${D}/eames-daycare/eames-sketch-2.jpg`, 'Sketch, circulation'),
         ],
         layout: 'grid3',
+        equalMedia: true,
       },
       {
         media: [
@@ -455,6 +505,7 @@ export const design: Project[] = [
           img(`${D}/eames-daycare/eames-render-4.jpg`, 'Digital model, studio'),
         ],
         layout: 'grid2',
+        equalMedia: true,
       },
       {
         heading: 'From study to daycare',
@@ -464,6 +515,7 @@ export const design: Project[] = [
           img(`${D}/eames-daycare/daycare-wall-geometries.jpg`, 'Wall geometries'),
         ],
         layout: 'grid3',
+        equalMedia: true,
       },
       {
         heading: 'Daycare',
@@ -481,6 +533,7 @@ export const design: Project[] = [
           img(`${D}/eames-daycare/daycare-model-3.jpg`, 'Physical model, detail'),
         ],
         layout: 'grid2',
+        equalMedia: true,
       },
     ],
   },
@@ -490,16 +543,31 @@ export const design: Project[] = [
     title: 'Taste Topology Reliefs',
     meta: 'Honors project · Fall 2026',
     status: 'In progress',
-    cover: '/images/research/taste/relief-a.jpg',
+    cover: '/images/research/taste/cad/assembly.png',
     blurb: 'Parametric relief panels made from the same geometry as their drawings.',
     intro:
       'The physical half of the Taste Topology study: four 190 mm panels with raised ribs, generated from the same metric definition as the drawings shown on screen. Full study on the <a href="/research/taste-topology">research page</a>.',
     sections: [
       {
-        media: [
-          img('/images/research/taste/panels.jpg', 'Panels A to D'),
-          img('/images/research/taste/relief-a.jpg', 'Relief A'),
-        ],
+        media: [img('/images/research/taste/cad/four-designs.png', 'Four tactile relief designs')],
+        layout: 'wide',
+      },
+      {
+        heading: 'Installation',
+        text: 'Six covered pairs bring the drawings into a tactile study. The board is designed to lean against a wall on a desk, with a restrained bottom edge. CAD development is ongoing; hinge supports and mounting details will be tested in a physical prototype.',
+        media: [img('/images/research/taste/cad/assembly.png', 'Full six-pair study board with the lids open')],
+        layout: 'wide',
+      },
+      {
+        heading: 'Assembly',
+        media: [img('/images/research/taste/cad/exploded.png', 'Exploded board, frames, backing squares, printed reliefs and covers')],
+        layout: 'wide',
+      },
+      {
+        heading: 'Proposed materials',
+        text: 'Main board: ½-inch natural plywood, 62 × 26 inches. Frames: ¼-inch poplar rails. Relief backing: twelve gray-painted ¼-inch MDF squares. Reliefs: twelve 190 × 190 mm PLA prints, using four designs. Covers: 3/16-inch foam board with flexible polypropylene hinges and lid supports. The main wooden structure stays natural; gray is reserved for the relief backing.',
+      },
+    ],
         layout: 'grid2',
       },
     ],
@@ -536,14 +604,18 @@ export const design: Project[] = [
         layout: 'grid3',
       },
       {
+        heading: 'Exploded CAD',
+        media: [img(`${D}/icarus/render-exploded.jpg`, 'Icarus sandal exploded assembly')],
+        layout: 'wide',
+      },
+      {
         heading: 'Design',
         text: 'A woven leather pattern that follows the natural curves of the foot, a barefoot sole and versatile lacing. Colorways in Andorra, Praline and Vaporous Gray.',
         media: [
-          img(`${D}/icarus/render-exploded.jpg`, 'Exploded view'),
           img(`${D}/icarus/render-front.jpg`, 'Front'),
           img(`${D}/icarus/render-back.jpg`, 'Back'),
         ],
-        layout: 'grid3',
+        layout: 'grid2',
       },
       {
         heading: 'Prototype',
@@ -620,6 +692,12 @@ export const design: Project[] = [
     intro:
       'Tacti clips to the back of a phone and guides a shopper through the store. The app estimates position from the compass and walking steps, and the device turns each instruction into pulses on a left or right motor. Without the device, the phone vibrates instead. The work spans the enclosure, the cue vocabulary, firmware for a two-motor prototype and the app.',
     sections: [
+      {
+        heading: 'Exploded CAD',
+        text: 'The current enclosure separates into a rigid PLA housing, sliding lid and two contact inserts. This view uses the four v06 CAD parts; electronics and phone attachment are still being developed.',
+        media: [img(`${D}/tacti/cad/exploded.png`, 'Exploded CAD assembly')],
+        layout: 'wide',
+      },
       {
         media: [
           img(`${D}/tacti/device.jpg`, 'Tacti enclosure'),
@@ -776,6 +854,12 @@ export const design: Project[] = [
     intro:
       'A brand-led product project for Omnilux, a maker of LED light-therapy masks. Research into the brand, its products, audience and competitors led to three directions beyond the face mask: lip renewal, scalp and hair, and body wraps. The lip mask was developed through sketches, printed prototypes, technical drawings and renders.',
     sections: [
+      {
+        heading: 'Exploded CAD',
+        text: 'Separated layers from the original lip-mask CAD assembly, showing the outer form and internal inserts. This is a design-development view rather than a validated production assembly.',
+        media: [img(`${D}/omnilux/cad/exploded.png`, 'Exploded CAD assembly')],
+        layout: 'wide',
+      },
       {
         media: [
           img(`${D}/omnilux/render-worn-2.jpg`, 'Lip mask, worn'),

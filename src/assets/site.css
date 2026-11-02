@@ -310,3 +310,7 @@ h1, h2, h3 { line-height: 1.25; margin: 0; font-weight: 600; letter-spacing: -0.
   .media--grid2, .media--grid3 { grid-template-columns: 1fr; }
   .card-grid { grid-template-columns: 1fr; }
 }
+
+/* Shared image stage keeps portrait studies from dwarfing their neighbors. */
+.media--equal .media__btn { aspect-ratio: 4 / 3; }
+.media--equal .media__btn img { width: 100%; height: 100%; object-fit: contain; }
